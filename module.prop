@@ -1,0 +1,6 @@
+id=seasoc
+name=QSD++
+version=2.3.1
+versionCode=231
+author=云渡Android
+description=适用于高通QSD设备的性能调度与负载均衡
