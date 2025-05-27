@@ -1,1 +1,27 @@
+#!/sbin/sh
 
+umask 022
+
+ui_print() {
+  echo "$1"
+}
+
+abort_install() {
+  ui_print "****************************************"
+  ui_print "! Installation failed: $1"
+  ui_print "****************************************"
+  exit 1
+}
+
+OUTFD=$2
+ZIPFILE=$3
+
+mount /data 2>/dev/null
+
+MAGISK_UTIL="/data/adb/magisk/util_functions.sh"
+[ ! -f "$MAGISK_UTIL" ] && abort_install "Magisk v22.0+ required!"
+. "$MAGISK_UTIL"
+[ "$MAGISK_VER_CODE" -lt 20400 ] && abort_install "Magisk version too old!"
+
+install_module || abort_install "Module installation failed"
+exit 0
