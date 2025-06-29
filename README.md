@@ -13,6 +13,6 @@
 - 与 SafetyNet 无关的卸载
 
 ### 目录结构
-- 'scripts/'：所有启动时和卸载注入
-- 'common/'：可重用的逻辑，如文件完整性检查
-- 'META-INF/'：标准 Magisk 安装程序
+- scripts/：所有启动时和卸载注入
+- common/：可重用的逻辑，如文件完整性检查
+- META-INF/：标准 Magisk 安装程序
